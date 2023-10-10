@@ -1,0 +1,91 @@
+@import url('https://fonts.cdnfonts.com/css/fredericka-the-great');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 5% 10%;
+  text-align: center;
+}
+
+.container {
+  margin: 1% 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.frame {
+  border: 2px solid black;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.board {
+  background-color: black;
+  height: 30rem;
+  width: 80rem;
+  padding: 0.5rem 1rem;
+}
+
+p {
+  color: white;
+  font-family: 'Fredericka the Great', sans-serif;
+  font-size: 2rem;
+}
+
+#boardTitle span {
+  opacity: 0;
+  animation: appear 2s forwards;
+  animation-delay: calc(.2s * var(--i))
+}
+
+#moto span {
+  opacity: 0;
+  animation: appear 2s forwards;
+  animation-delay: calc(.2s * var(--i))
+}
+
+@keyframes appear {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.tech {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+@keyframes jump {
+  0% {
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+
+  40% {
+    transform: translate3d(0, 30%, 0) scale3d(.7, 1.5, 1);
+  }
+
+  100% {
+    transform: translate3d(0, 100%, 0) scale3d(1.5, .7, 1);
+  }
+}
+
+.jump {
+  transform-origin: 50% 50%;
+  animation: jump .5s linear alternate infinite;
+}
